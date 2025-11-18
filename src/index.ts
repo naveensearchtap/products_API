@@ -1,11 +1,16 @@
 import { AppDataSource } from "./data-source"
-import { User } from "./entity/User"
-import { addProduct } from "./repositories/productRepository";
+// import { addProduct } from "./repositories/productRepository";
+import { app, PORT } from "./server";
 
-AppDataSource.initialize().then(async () => {
-    console.log('Server running');
+// AppDataSource.initialize returns an object so we can have it have promise chaining.
+AppDataSource.initialize()
+    .then(async () => {
+        console.log('Database Connected !!!!');
+        // await addProduct();
 
-    await addProduct()
-
-}).catch(error => console.log(error))
+        app.listen(PORT, ()=> {
+            console.log(`Server running at ${PORT}`)
+        })
+    })
+    .catch(error => console.log(error))
 

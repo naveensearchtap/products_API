@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { User } from "./User";
 
 export enum TransitionTypes {
     DEPOSIT = 'deposit',
@@ -18,5 +19,12 @@ export class Transactions extends BaseEntity {
 
     @Column()
     amount: number
+
+    @ManyToOne (
+        () => User,
+        (user) => user.transactions
+    )
+    user: User
+    
     
 }

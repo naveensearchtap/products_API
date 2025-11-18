@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv'
 import { DataSource } from "typeorm"
 import { User } from "./entity/User"
 import { Product } from "./entity/Product"
-import { Transactions } from "./entity/Transactions"
+import { Transactions } from "./entity/Transaction"
 
 dotenv.config();
 // process.env always gives string

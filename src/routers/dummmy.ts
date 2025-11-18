@@ -1,5 +1,5 @@
-import { Product } from "./entity/Product";
-import { AppDataSource } from "./data-source";
+import { Product } from "../entity/Product";
+import { AppDataSource } from "../data-source";
 
 const product = new Product();
 
