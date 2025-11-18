@@ -6,7 +6,6 @@ import { Product } from "./entity/Product"
 import { Transactions } from "./entity/Transaction"
 
 dotenv.config();
-// process.env always gives string
 export const AppDataSource = new DataSource({
     type: "postgres",
     host: "localhost",
@@ -14,8 +13,8 @@ export const AppDataSource = new DataSource({
     username: process.env.POSTGRES_USERNAME,
     password: process.env.POSTGRES_PASSKEY,
     database: process.env.POSTGRES_DATABASE,
-    synchronize: true, // make sure sync is there between entites and database
-    logging: false, // enable/disable logging queries and errors
+    synchronize: true,
+    logging: false,
     entities: [User, Product, Transactions],
     migrations: [],
     subscribers: [],

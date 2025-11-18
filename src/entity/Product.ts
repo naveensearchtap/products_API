@@ -4,7 +4,6 @@ import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeor
 @Entity()
 export class Product {
     // Primary Key
-    // lets say you want your id column to be auto-generated (this is known as auto-increment / sequence / serial / generated identity then use PrimaryGeneratorColumn
     @PrimaryGeneratedColumn()
     product_id: number
     
@@ -19,7 +18,4 @@ export class Product {
 
     @Column({ default: true })
     isInStock: boolean
-
-    // @CreateDateColumn()
-    // created_at: number
 }
